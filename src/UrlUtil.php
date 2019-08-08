@@ -41,9 +41,9 @@ class UrlUtil
 		else {
 			$path = $parsed['path'];
 			if (substr($referer, -1) == '/') {
-				$built[] = $parsed['path'];
+				$built[] = trim($parsed['path'], '/');
 			} else {
-				$built[] = dirname($parsed['path']);
+				$built[] = trim(dirname($parsed['path']), '/');
 			}
 			$built[] = $url;
 		}

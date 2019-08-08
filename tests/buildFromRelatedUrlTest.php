@@ -15,6 +15,9 @@ class buildFromRelatedUrlTest extends TestCase
         $expects = [
             'https://www.php.net/manual/ja/function.parse-url.php'=> ['/manual/ja/function.parse-url.php', 'https://www.php.net/downloads.php'],
             'https://www.php.net/manual/ja/function.parse-url.php'=> ['https://www.php.net/manual/ja/function.parse-url.php', 'https://www.php.net/downloads.php'],
+
+            'https://www.example.net/a/b/new/related/path'=> ['new/related/path', 'https://www.example.net/a/b/c'],
+            'https://www.example.net/a/b/c/new/related/path'=> ['new/related/path', 'https://www.example.net/a/b/c/'],
         ];
 
 
