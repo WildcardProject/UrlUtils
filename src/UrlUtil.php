@@ -40,7 +40,11 @@ class UrlUtil
 		// 相対パスの場合
 		else {
 			$path = $parsed['path'];
-			$built[] = dirname($parsed['path']);
+			if (substr($referer, -1) == '/') {
+				$built[] = $parsed['path'];
+			} else {
+				$built[] = dirname($parsed['path']);
+			}
 			$built[] = $url;
 		}
 		return implode('/', $built);
