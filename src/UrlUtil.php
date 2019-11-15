@@ -13,11 +13,11 @@ class UrlUtil
 	 */
 	public static function buildFromRelatedUrl($url, $referer) {
 		// URLが絶対パスならそのまま返して問題ない
-		if (preg_match('@http(s)?://@i', $url)) {
+		if (preg_match('@^(http(s)?:)?//@i', $url)) {
 			return $url;
 		}
 		// そうじゃないのに refererが絶対パスじゃなければエラーにする
-		if (!preg_match('@http(s)?://@i', $referer)) {
+		if (!preg_match('@^(http(s)?:)?//@i', $referer)) {
 			//throw new Exception("Invalid referer string. $referer");
 		    return $url;
 		}
