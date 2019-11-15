@@ -18,7 +18,8 @@ class UrlUtil
 		}
 		// そうじゃないのに refererが絶対パスじゃなければエラーにする
 		if (!preg_match('@http(s)?://@i', $referer)) {
-			throw new Exception("Invalid referer string. $referer");
+			//throw new Exception("Invalid referer string. $referer");
+		    return $url;
 		}
 
 		$referer = strtolower($referer);
